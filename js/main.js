@@ -4,11 +4,16 @@ $(document).ready(function() {
 		$('.header-nav').toggleClass('is-active')
 	})
 
-	if ($(window).width() > 640) {
-		$('.splash-bg').attr('src', 'img/video_bg.m4v');
+	var $video = $('.splash-bg');
+	var $poster = $('.splash-poster');
+
+	if ($(window).width() <= 640) {
+		$video.hide();
+		$poster.addClass('is-active');
 	}
-	else {
-		$('.splash-bg').hide();
-		$('.splash-poster').toggleClass('is-active');
-	}
+
+	$video.on('error', function() {
+		$video.hide();
+		$poster.addClass('is-active');
+	});
 });
