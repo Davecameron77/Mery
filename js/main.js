@@ -5,7 +5,7 @@ $(document).ready(function() {
 	})
 
 	if ($(window).width() > 640) {
-		$('.splash-bg').attr('src','Mery/img/video_bg.m4v');
+		$('.splash-bg').attr('src','img/video_bg.m4v');
 	}
 	else {
 		$('.splash-bg').hide();
